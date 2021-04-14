@@ -71,7 +71,7 @@ app.route(prefix + '/users')
 app.route(prefix + '/matieres')
   .get(matiere.getMatieres);
 
-app.route(prefix + '/matieres.:id')
+app.route(prefix + '/matieres/:id')
   .get(matiere.getMatiere);
 
 

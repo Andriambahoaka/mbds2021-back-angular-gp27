@@ -50,10 +50,10 @@ function postAssignment(req, res){
     assignment.note=req.body.note;
     assignment.auteur=req.body.auteur;
     assignment.remarque=req.body.remarque;
-    assignment.idMatiere=req.body.idMatiere;
+    assignment.matiere=req.body.matiere;
 
     console.log("POST assignment reçu :");
-    console.log(assignment)
+    console.log(req.body.matiere)
 
     assignment.save( (err) => {
         if(err){
