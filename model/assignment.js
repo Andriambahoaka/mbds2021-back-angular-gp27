@@ -8,11 +8,12 @@ let AssignmentSchema = Schema({
     id: Number,
     matiere: {
         id: Number,
-        matiere: String,
+        nom: String,
         pathImage: String,
-        nomProfesseur: String,
-        pathProfesseur: String
-
+        prof: {
+            nomProfesseur: String,
+            pathProfesseur: String
+        }
     },
     dateDeRendu: Date,
     nom: String,

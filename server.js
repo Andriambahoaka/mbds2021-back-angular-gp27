@@ -13,7 +13,9 @@ mongoose.Promise = global.Promise;
 
 // remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud s
 //const uri = 'mongodb+srv://mb:P7zM3VePm0caWA1L@cluster0.zqtee.mongodb.net/assignments?retryWrites=true&w=majority';
-const uri = 'mongodb+srv://mahery:mahery@rakitsary.u61rm.mongodb.net/assignments?retryWrites=true&w=majority';
+// const uri = 'mongodb+srv://mahery:mahery@rakitsary.u61rm.mongodb.net/assignments?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://admin:admin1234@cluster0.ts3nl.mongodb.net/assignments?retryWrites=true&w=majority';
+
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -71,7 +73,7 @@ app.route(prefix + '/users')
 app.route(prefix + '/matieres')
   .get(matiere.getMatieres);
 
-app.route(prefix + '/matieres/:id')
+app.route(prefix + '/matieres.:id')
   .get(matiere.getMatiere);
 
 

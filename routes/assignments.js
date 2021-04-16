@@ -1,4 +1,5 @@
 let Assignment = require('../model/assignment');
+const {generateId} = require('../helpers/util');
 
 /*Récupérer tous les assignments (GET)
 function getAssignments(req, res){
@@ -29,7 +30,7 @@ function getAssignments(req, res) {
       aggregateQuery,
       {
         page: parseInt(req.query.page) || 1,
-        limit: parseInt(req.query.limit) || 10,
+        limit: parseInt(req.query.limit) || 12,
       },
       (err, assignments) => {
         if (err) {
@@ -44,6 +45,7 @@ function getAssignments(req, res) {
 function postAssignment(req, res){
     let assignment = new Assignment();
     assignment.id = req.body.id;
+    // assignment.id = generateId(7);
     assignment.nom = req.body.nom;
     assignment.dateDeRendu = req.body.dateDeRendu;
     assignment.rendu = req.body.rendu;
@@ -53,7 +55,7 @@ function postAssignment(req, res){
     assignment.matiere=req.body.matiere;
 
     console.log("POST assignment reçu :");
-    console.log(req.body.matiere)
+    console.log(assignment)
 
     assignment.save( (err) => {
         if(err){
